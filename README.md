@@ -4,3 +4,4 @@ Optical flow represents an abstract visual feature, and is a way of describing m
 
 ### Challenges
 ![image](https://github.com/user-attachments/assets/fe06e951-0f74-4a95-aa66-a1b94811ef5d)
+-Mode Collapse
