@@ -5,7 +5,7 @@
 **GANFlow** proposes an unsupervised optical flow learning framework that incorporates **Generative Adversarial Networks (GANs)** to enhance the realism of reconstructed images and improve flow prediction accuracy. Built upon the **UFlow** generator backbone, GANFlow introduces an image-based discriminator that guides the generator without requiring any ground-truth optical flow labels.
 
 ## Architecture
-![alt text](image-2.png)
+![image](https://github.com/user-attachments/assets/d4a966a0-f510-4451-af5b-3f9c0fe64d5c)
 *Figure 1. Network architecture of our proposed GANFlow*
 
 The architecture consists of:
@@ -16,7 +16,7 @@ The generator and discriminator are trained alternately in an adversarial manner
 
 
 ## Ablation Studies
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/38229fac-1b0b-4a1b-b000-a773a68c07ff)
 *Figure 2. Different image discriminator architectures*
 
 We explored four different discriminator architectures to assess how feature extraction and fusion impact adversarial learning. These variants are summarized in Figure 2:
