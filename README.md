@@ -12,7 +12,7 @@ The architecture consists of:
 - **Generator**: Predicts optical flow between two frames via a hierarchical feature extraction and warping mechanism.
 - **Discriminator**: Takes real and reconstructed images, along with occlusion masks, to output a probability of authenticity, guiding the generator via adversarial training.
 
-The generator and discriminator are trained alternately in an adversarial manner, where the generator is optimized using a combination of photometric consistency loss **\( \mathcal{L}_{census} \)**, smoothness loss **\( \mathcal{L}_{smooth} \)**, self-supervision loss **\( \mathcal{L}_{self} \)**, and adversarial generator loss **\( \mathcal{L}_{Gg} \)**, while the discriminator is optimized independently using the adversarial discriminator loss **\( \mathcal{L}_{Gd} \)**.
+The generator and discriminator are trained alternately in an adversarial manner, where the generator is optimized using a combination of photometric consistency loss L_census, smoothness loss **\( \mathcal{L}_{smooth} \)**, self-supervision loss **\( \mathcal{L}_{self} \)**, and adversarial generator loss **\( \mathcal{L}_{Gg} \)**, while the discriminator is optimized independently using the adversarial discriminator loss **\( \mathcal{L}_{Gd} \)**.
 
 
 ## Ablation Studies
