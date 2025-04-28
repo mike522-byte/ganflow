@@ -12,7 +12,7 @@ The architecture consists of:
 - **Generator**: Predicts optical flow between two frames via a hierarchical feature extraction and warping mechanism.
 - **Discriminator**: Takes real and reconstructed images, along with occlusion masks, to output a probability of authenticity, guiding the generator via adversarial training.
 
-The generator and discriminator are trained alternately in an adversarial manner, where the generator is optimized using a combination of photometric consistency loss L_census, smoothness loss **\( \mathcal{L}_{smooth} \)**, self-supervision loss **\( \mathcal{L}_{self} \)**, and adversarial generator loss **\( \mathcal{L}_{Gg} \)**, while the discriminator is optimized independently using the adversarial discriminator loss **\( \mathcal{L}_{Gd} \)**.
+The generator and discriminator are trained alternately in an adversarial manner, where the generator is optimized using a combination of photometric consistency loss **L<sub>census</sub>**, smoothness loss **L<sub>smooth</sub>**, self-supervision loss **L<sub>self</sub>**, and adversarial generator loss **L<sub>Gg</sub>**, while the discriminator is optimized independently using the adversarial discriminator loss **L<sub>Gd</sub>**.
 
 
 ## Ablation Studies
@@ -20,10 +20,10 @@ The generator and discriminator are trained alternately in an adversarial manner
 *Figure 2. Different image discriminator architectures*
 
 We explored four different discriminator architectures to assess how feature extraction and fusion impact adversarial learning. These variants are summarized in Figure 2:
-- **Structure (A)**: Separate feature extraction for real and reconstructed images followed by independent probability predictions.
-- **Structure (B)**: Concatenated real and reconstructed images at the input stage, enabling joint feature extraction.
-- **Structure (C)**: Introduction of the second frame \( \mathbf{X}_{t+1} \) and use of a cost volume to guide the probability prediction.
-- **Structure (D)**: Feature extraction for each input image followed by feature-level concatenation prior to probability prediction.
+- **Structure A**: Separate feature extraction for real and reconstructed images followed by independent probability predictions.
+- **Structure B**: Concatenated real and reconstructed images at the input stage, enabling joint feature extraction.
+- **Structure C**: Introduction of the second frame **X<sub>t+1</sub>** and use of a cost volume to guide the probability prediction.
+- **Structure D**: Feature extraction for each input image followed by feature-level concatenation prior to probability prediction.
 
 Results show **Structure (D)** consistently achieves the best performance across datasets. This structure facilitates richer interactions between features from real and reconstructed images.
 
@@ -35,7 +35,7 @@ Since occluded regions violate photometric assumptions, we investigated differen
 
 We compared two types of discriminator outputs:
 - A single scalar value per image pair (global decision).
-- A dense \( H \times W \) probability map (pixel-wise decision).
+- A dense **H * W** probability map (pixel-wise decision).
 
 Our results indicate that using **pixel-wise outputs** yields superior performance, as it enables fine-grained spatial supervision. This allows the discriminator to focus on local inconsistencies, providing stronger learning signals to the generator.
 
